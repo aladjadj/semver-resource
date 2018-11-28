@@ -67,6 +67,7 @@ type Source struct {
 	Username      string `json:"username"`
 	Password      string `json:"password"`
 	File          string `json:"file"`
+	FileBumped    string `json:"file_bumped"`
 	GitUser       string `json:"git_user"`
 	CommitMessage string `json:"commit_message"`
 
@@ -113,4 +114,5 @@ const (
 	DriverGit         Driver = "git"
 	DriverSwift       Driver = "swift"
 	DriverGCS         Driver = "gcs"
+	DriverFile        Driver = "file"
 )

@@ -117,6 +117,14 @@ func FromSource(source models.Source) (Driver, error) {
 			Key:        source.Key,
 		}, nil
 
+	case models.DriverFile:
+		return &FileDriver{
+			InitialVersion: initialVersion,
+
+			File:       source.File,
+			FileBumped: source.FileBumped,
+		}, nil
+
 	default:
 		return nil, fmt.Errorf("unknown driver: %s", source.Driver)
 	}

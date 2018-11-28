@@ -109,6 +109,14 @@ The `gcs` driver works by modifying a file in a Google Cloud Storage bucket.
     }
   ```
 
+### `file` Driver
+
+The `file` driver works by modifying a file in localy.
+
+* `file`: *Required.* The fullpath of the file.
+
+* `file_bumped` *Required.* The fullpath of the file bumped.
+
 ### Example
 
 With the following resource configuration:
@@ -217,7 +225,7 @@ be one of:
   type, (e.g. `alpha` vs. `beta`), the type is switched and the prerelease
   version is reset to `1`. If the version is *not* already a pre-release, then
   `pre` is added, starting at `1`.
-  
+
   The value of `pre` can be anything you like; the value will be `pre`-pended (_hah_) to a numeric value. For example, `pre: build` will result in a semver of `x.y.z-build.<number>`, `pre: alpha` becomes `x.y.z-alpha.<number>`, and `pre: my-preferred-naming-convention` becomes `x.y.z-my-preferred-naming-convention.<number>`
 
 ### Running the tests
